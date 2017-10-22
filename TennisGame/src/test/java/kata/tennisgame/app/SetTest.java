@@ -27,14 +27,14 @@ public class SetTest {
 	}
 
 	@Test
-	public void testGetLeadingPlayer() {
+	public void leadingPlayerShouldBe_ThePlayerWithMoreGameUnitsThanHisOpponent() {
 		assertEquals(null, currentSet.getLeadingPlayer());
 		currentSet.getScore().put(playerOne, 3);
 		assertEquals(playerOne, currentSet.getLeadingPlayer());
 	}
 
 	@Test
-	public void testGetSetWinnerPlayer() {
+	public void setWinnerPlayerShouldcBe_ThePlayerHavingAtLeastTwoGameUnitsMoreThanHisOpponentAtTheEndOfTheSet() {
 		currentSet.resetScore();
 		assertEquals(null, currentSet.getSetWinnerPlayer());
 		currentSet.getScore().put(playerOne, 6);

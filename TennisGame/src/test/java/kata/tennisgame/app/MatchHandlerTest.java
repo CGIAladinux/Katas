@@ -48,10 +48,9 @@ public class MatchHandlerTest {
 	}
 
 	/**
-	 * Test method for {@link kata.tennisgame.app.MatchHandler#getAdvantagePlayer()}.
 	 */
 	@Test
-	public void testGetAdvantagePlayer() {
+	public void advantagePlayerShouldBe_WhenThePlayerHasAtLeastThreeGameUnitsLikeHisOpponentAndWinOneMoreGameUnit() {
 		matchHandler.resetScores();
 		matchHandler.attributePoint(playerOne);
 		assertEquals(null, matchHandler.getAdvantagePlayer());
@@ -70,7 +69,7 @@ public class MatchHandlerTest {
 	 * Test method for {@link kata.tennisgame.app.MatchHandler#getAdvantagePlayer()}.
 	 */
 	@Test
-	public void testGetLeadPlayer() {
+	public void leadPlayerShouldBe_ThePlayerWithMoreGameUnitWonThanHisOpponent() {
 		matchHandler.resetScores();
 		matchHandler.attributePoint(playerOne);
 		assertEquals(playerOne, matchHandler.getLeadPlayer());
@@ -82,7 +81,7 @@ public class MatchHandlerTest {
 	 * Test method for {@link kata.tennisgame.app.MatchHandler#getPlayerBehind()}.
 	 */
 	@Test
-	public void testGetPlayerBehind() {
+	public void playerBehindShouldBe_ThePlayerWithLessGameUnitsWonThanHisOpponent() {
 		matchHandler.resetScores();
 		matchHandler.attributePoint(playerOne);
 		assertEquals(playerTwo, matchHandler.getPlayerBehind());
